@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ericad Boutique</title>
+    <link rel="shortcut icon" type="image/png" href="./Images/Logo.jpg">
+    <link rel="stylesheet" href="styles/styles.css">
+        <style>
+    .light-mode {
+  background-color: whitesmoke;
+}
+    </style>
+</head>
+<body>
+<header>
+    <div id="logo-img">
+        <img src="Images/Logo.jpg" alt="" id="logo">
+    </div>
+<nav>
+
+      
+    <div id="subbox">
+        <ol>
+            <li><a href="#" id="first">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#" id="last">About us</a></li>
+            <li><a href="#"><img src="/Images/Log in.png" alt="" id="log-in-img"> Log in</a></li>  
+           <li> <a href="#"><button id="sign-up">Sign up</button></a></li>
+        </ol>
+    </div>
+
+      <div class="times">
+        <div id="bar1"><div>
+        <div id="bar2"></div>
+        <div id="bar3"></div>
+    </div>
+    </nav>
+</header>
+
+ <section class="hero">
+        <h2 id="hero_h2">Welcome to Ericad Boutique! </h2>
+        <figure>
+            <img src="Images/Background.png" alt="">
+            <figcaption>
+                <h1 class="get">Get up to 30% off new arrivals</h1>
+                <h4>Spring/summer collection 2030</h4>
+            </figcaption>
+              <a href="#">
+        <input type="submit" value="Shop Now" class="shop">
+        </a> 
+        </figure>
+      </section>
+       <button onclick="myFunction()" class="light mode">Light mode</button>
+      <section id="images">
+        <div class="image22">
+            <img src="/Images/Woman.png" alt="" class="woman-picture">
+           <h6>Women's</h6>
+            </div>
+
+         <div class="image23">
+            <img src="/Images/man.jpg" alt="" class="man-picture">
+            <h6 id="men">Men's</h6>
+            </div>
+      </section>
+
+     <script>
+    function myFunction() {
+   const element = document.body;
+   element.classList.toggle("light-mode");
+}
+
+    const year = document.getElementById("year")
+    const thisYear = new Date().getFullYear()
+    year.setAttribute("datetime", thisYear)
+    year.textContent = thisYear
+ </script>
+
+ <script>
+    const drop = document.querySelector('.times');
+    const ull = document.querySelector('#subbox');
+    const bar1 = document.querySelector('#bar1');
+    const bar2 = document.querySelector('#bar2');
+    const bar3 = document.querySelector('#bar3');
+    const barArray = [bar1, bar2, bar3]
+    drop,addEventListener('click', () => {
+        if (ull.style.display=== 'flex') {
+            drop.style.transform = 'rotate(0deg)';
+            bar1.style.transform = 'translateY(-8px)';
+            bar2.style.backgroundColor = 'white';
+            bar3.style.transform = 'translateY(8px)';
+            ull.style.display = 'none';
+        } else{
+            bar1.style.transform = 'rotate(60deg)';
+            bar2.style.backgroundColor = 'transparent';
+            bar3.style.transform = 'rotate(-78deg)';
+            drop.style.transform = 'rotate(-90deg)';
+            drop.style.transition = 'all 0.5s';
+            ull.style.display = 'flex'
+           }
+    })
+ </script>
+ 
+</body>
+</html>
